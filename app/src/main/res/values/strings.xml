@@ -2,8 +2,11 @@
     <string name="app_name">KalmLang</string>
     <string name="start">Начать</string>
     <string name="back">Назад</string>
+    <string name="next">Далее</string>
     <string name="caption1"><b>Земш болн Темсн</b>\nФрукты и Овощи</string>
+    <string name="test_words">Текст на калм.\nТекст на русс.</string>
     <string name="num1">1</string>
     <string name="num2">2</string>
     <string name="num3">3</string>
+    <string name="production">Произношение</string>
 </resources>
