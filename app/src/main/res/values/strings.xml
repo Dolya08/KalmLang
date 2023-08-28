@@ -9,4 +9,6 @@
     <string name="num2">2</string>
     <string name="num3">3</string>
     <string name="production">Произношение</string>
+    <string name="x">X</string>
+    <string name="q">?</string>
 </resources>
