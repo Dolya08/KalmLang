@@ -28,7 +28,7 @@ public class GameLevels extends AppCompatActivity {
                     Intent intent = new Intent(GameLevels.this, MainActivity.class);
                     startActivity(intent);
                     finish();
-                }catch (Exception e){
+                }catch (Exception ignored){
 
                 }
             }
@@ -41,7 +41,7 @@ public class GameLevels extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(GameLevels.this, Level1.class);
                     startActivity(intent);
-                }catch (Exception e){
+                }catch (Exception ignored){
 
                 }
             }
@@ -55,7 +55,7 @@ public class GameLevels extends AppCompatActivity {
             Intent intent = new Intent(GameLevels.this, MainActivity.class);
             startActivity(intent);
             finish();
-        }catch (Exception e){
+        }catch (Exception ignored){
 
         }
     }

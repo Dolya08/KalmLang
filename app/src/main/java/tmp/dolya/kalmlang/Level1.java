@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -48,25 +49,40 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                    dialog.setContentView(R.layout.previewdialog);
-                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                    dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
-
-                    TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
-                    btnclose.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog.dismiss();
-                        }
-                    });
                     dialog.show();
-                } catch (Exception e) {
+                } catch (Exception ignored) {
 
                 }
             }
         });
 
         dialog.show();
+
+        Button btn_back = (Button)findViewById(R.id.btn_back_lvl1);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+
     }
+
+    @Override
+    public void onBackPressed() {
+        try {
+            Intent intent = new Intent(Level1.this, GameLevels.class);
+            startActivity(intent);
+            finish();
+        } catch (Exception ignored) {
+
+        }
+    }
+
 }
