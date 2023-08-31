@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="lvl1text0">Альмн\nЯблоко</string>
+    <string name="lvl1text1">Чи\nВишня</string>
+    <string name="lvl1text2">Хар ѳрг\nСлива</string>
+    <string name="lvl1text3">Шар ѳрг\nПерсик</string>
+    <string name="lvl1text4">Кедмн\nГруша</string>
+    <string name="lvl1text5">Уста үзм\nВиноград</string>
+    <string name="lvl1text6">Адамч\nПомидор</string>
+    <string name="lvl1text7">Хаяр\nОгурец</string>
+    <string name="lvl1text8">Хавстн\nКапуста</string>
+    <string name="lvl1text9">Луувң\nМорковка</string>
+    <string name="lvl1text10">Боднцг\nКартошка</string>
+    <string name="lvl1text11">Мəңгрсн\nЛук</string>
+    <string name="lvl1text12">Һу\nДыня</string>
+    <string name="lvl1text13">Тарвс\nАрбуз</string>
+</resources>
