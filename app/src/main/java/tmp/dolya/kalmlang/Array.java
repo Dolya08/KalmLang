@@ -18,6 +18,22 @@ public class Array {
             R.drawable.melon,
             R.drawable.watermelon
     };
+    final int[] raw1 = {
+            R.raw.apple,
+            R.raw.cherry,
+            R.raw.plum,
+            R.raw.peach,
+            R.raw.pear,
+            R.raw.grape,
+            R.raw.tomato,
+            R.raw.cucmber,
+            R.raw.cabbage,
+            R.raw.carrot,
+            R.raw.potato,
+            R.raw.onion,
+            R.raw.melon,
+            R.raw.watermelon
+    };
 
     final int[] texts1 = {
             R.string.lvl1text0,

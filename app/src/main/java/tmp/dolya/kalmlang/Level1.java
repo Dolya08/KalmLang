@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +19,10 @@ public class Level1 extends AppCompatActivity {
 
     Dialog dialog;
 
+    public int numPic;
+    private MediaPlayer wavPic;
+    Array array = new Array();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +31,8 @@ public class Level1 extends AppCompatActivity {
         final ImageView img_main = (ImageView)findViewById(R.id.img_main);
 
         img_main.setClipToOutline(true);
+
+        final TextView textWords = findViewById(R.id.text_words);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -36,16 +43,16 @@ public class Level1 extends AppCompatActivity {
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
-        TextView btnclose = (TextView)dialog.findViewById(R.id.btnclose);
-        btnclose.setOnClickListener(new View.OnClickListener() {
+        TextView btnClose = (TextView)dialog.findViewById(R.id.btnclose);
+        btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
             }
         });
 
-        TextView btnquest = (TextView)this.findViewById(R.id.btnquest);
-        btnquest.setOnClickListener(new View.OnClickListener() {
+        TextView btnQuest = (TextView)this.findViewById(R.id.btnquest);
+        btnQuest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -72,8 +79,26 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
+        numPic = 0;
+        img_main.setImageResource(array.images1[numPic]);
+        textWords.setText(array.texts1[numPic]);
+        wavPic = MediaPlayer.create(this, array.raw1[numPic]);
+
+        img_main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                soundPlayBtn(wavPic);
+            }
+        });
+
     }
 
+    private void soundPlayBtn(MediaPlayer sound) {
+        if (sound.isPlaying()) {
+            sound.stop();
+        }
+        sound.start();
+    }
     @Override
     public void onBackPressed() {
         try {
