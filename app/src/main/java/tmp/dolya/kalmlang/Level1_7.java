@@ -1,7 +1,5 @@
 package tmp.dolya.kalmlang;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,7 +13,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Level1 extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Level1_7 extends AppCompatActivity {
 
     Dialog dialog;
 
@@ -26,7 +26,7 @@ public class Level1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.universal);
+        setContentView(R.layout.universallvl1);
 
         final ImageView img_main = (ImageView)findViewById(R.id.img_main);
 
@@ -63,14 +63,12 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-        dialog.show();
-
         Button btn_back = (Button)findViewById(R.id.btn_back_lvl1);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    Intent intent = new Intent(Level1_7.this, Level1_6.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -79,8 +77,23 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
-        numPic = 0;
+        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(Level1_7.this, Level1_8.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+
+        numPic = 6;
         img_main.setImageResource(array.images1[numPic]);
+        img_main.setAdjustViewBounds(true);
         textWords.setText(array.texts1[numPic]);
         wavPic = MediaPlayer.create(this, array.raw1[numPic]);
 
@@ -102,7 +115,7 @@ public class Level1 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level1.this, GameLevels.class);
+            Intent intent = new Intent(Level1_7.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {
