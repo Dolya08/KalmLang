@@ -8,7 +8,9 @@
     <string name="caption2"><b>Свойства</b></string>
     <string name="caption3"><b>Счёт</b></string>
     <string name="test_words">Текст на калм.\nТекст на русс.</string>
+    <string name="test_q">Очень большой текст с вопросом.</string>
     <string name="word1">Альмн\nЯблоко</string>
+    <string name="btn_go">Ответить</string>
     <string name="num1">1</string>
     <string name="num2">2</string>
     <string name="num3">3</string>
