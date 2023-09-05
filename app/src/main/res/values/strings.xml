@@ -26,7 +26,7 @@
     <string name="num13">13</string>
     <string name="num14">14</string>
     <string name="production">Произношение</string>
-    <string name="property">Свойства</string>
+    <string name="property">Ответьте на вопросы:</string>
     <string name="x">X</string>
     <string name="q">?</string>
 </resources>

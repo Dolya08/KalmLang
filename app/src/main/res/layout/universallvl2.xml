@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/property"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:textColor="@color/white"
                     android:gravity="center"/>
 
@@ -132,7 +132,8 @@
                     android:inputType="number"
                     android:maxEms="10"
                     android:minEms="1"
-                    android:textSize="24sp"
+                    android:text="@string/num1"
+                    android:textSize="12sp"
                     android:autofillHints="1" />
 
                 <Button

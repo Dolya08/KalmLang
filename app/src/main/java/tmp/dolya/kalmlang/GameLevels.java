@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameLevels extends AppCompatActivity {
-    Dialog dialog;
+    Dialog dialog1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +24,17 @@ public class GameLevels extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.levels1);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
+        dialog1 = new Dialog(this);
+        dialog1.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog1.setContentView(R.layout.levels1);
+        dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog1.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
-        TextView btnClose = (TextView)dialog.findViewById(R.id.btncloselevels1);
+        TextView btnClose = (TextView) dialog1.findViewById(R.id.btncloselevels1);
         btnClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
+                dialog1.dismiss();
             }
         });
 
@@ -43,7 +43,21 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.show();
+                    dialog1.show();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+
+        TextView btnlvl2 = (TextView)this.findViewById(R.id.caption2);
+        btnlvl2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(GameLevels.this, Level2_1.class);
+                    startActivity(intent);
+                    finish();
                 } catch (Exception ignored) {
 
                 }
@@ -64,12 +78,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_1 = (TextView)dialog.findViewById(R.id.textView1);
+        TextView lvl1_1 = (TextView) dialog1.findViewById(R.id.textView1);
         lvl1_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_1.class);
                     startActivity(intent);
                     finish();
@@ -79,12 +93,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_2 = (TextView)dialog.findViewById(R.id.textView2);
+        TextView lvl1_2 = (TextView) dialog1.findViewById(R.id.textView2);
         lvl1_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_2.class);
                     startActivity(intent);
                     finish();
@@ -94,12 +108,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_3 = (TextView)dialog.findViewById(R.id.textView3);
+        TextView lvl1_3 = (TextView) dialog1.findViewById(R.id.textView3);
         lvl1_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_3.class);
                     startActivity(intent);
                     finish();
@@ -109,12 +123,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_4 = (TextView)dialog.findViewById(R.id.textView4);
+        TextView lvl1_4 = (TextView) dialog1.findViewById(R.id.textView4);
         lvl1_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_4.class);
                     startActivity(intent);
                     finish();
@@ -124,12 +138,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_5 = (TextView)dialog.findViewById(R.id.textView5);
+        TextView lvl1_5 = (TextView) dialog1.findViewById(R.id.textView5);
         lvl1_5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_5.class);
                     startActivity(intent);
                     finish();
@@ -139,12 +153,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_6 = (TextView)dialog.findViewById(R.id.textView6);
+        TextView lvl1_6 = (TextView) dialog1.findViewById(R.id.textView6);
         lvl1_6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_6.class);
                     startActivity(intent);
                     finish();
@@ -154,12 +168,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_7 = (TextView)dialog.findViewById(R.id.textView7);
+        TextView lvl1_7 = (TextView) dialog1.findViewById(R.id.textView7);
         lvl1_7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_7.class);
                     startActivity(intent);
                     finish();
@@ -169,12 +183,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_8 = (TextView)dialog.findViewById(R.id.textView8);
+        TextView lvl1_8 = (TextView) dialog1.findViewById(R.id.textView8);
         lvl1_8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_8.class);
                     startActivity(intent);
                     finish();
@@ -184,12 +198,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_9 = (TextView)dialog.findViewById(R.id.textView9);
+        TextView lvl1_9 = (TextView) dialog1.findViewById(R.id.textView9);
         lvl1_9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_9.class);
                     startActivity(intent);
                     finish();
@@ -199,12 +213,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_10 = (TextView)dialog.findViewById(R.id.textView10);
+        TextView lvl1_10 = (TextView) dialog1.findViewById(R.id.textView10);
         lvl1_10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_10.class);
                     startActivity(intent);
                     finish();
@@ -214,12 +228,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_11 = (TextView)dialog.findViewById(R.id.textView11);
+        TextView lvl1_11 = (TextView) dialog1.findViewById(R.id.textView11);
         lvl1_11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_11.class);
                     startActivity(intent);
                     finish();
@@ -229,12 +243,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_12 = (TextView)dialog.findViewById(R.id.textView12);
+        TextView lvl1_12 = (TextView) dialog1.findViewById(R.id.textView12);
         lvl1_12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_12.class);
                     startActivity(intent);
                     finish();
@@ -244,12 +258,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_13 = (TextView)dialog.findViewById(R.id.textView13);
+        TextView lvl1_13 = (TextView) dialog1.findViewById(R.id.textView13);
         lvl1_13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_13.class);
                     startActivity(intent);
                     finish();
@@ -259,12 +273,12 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
-        TextView lvl1_14 = (TextView)dialog.findViewById(R.id.textView14);
+        TextView lvl1_14 = (TextView) dialog1.findViewById(R.id.textView14);
         lvl1_14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    dialog.dismiss();
+                    dialog1.dismiss();
                     Intent intent = new Intent(GameLevels.this, Level1_14.class);
                     startActivity(intent);
                     finish();

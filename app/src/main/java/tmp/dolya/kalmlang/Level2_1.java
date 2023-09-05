@@ -10,23 +10,28 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level1_8 extends AppCompatActivity {
+public class Level2_1 extends AppCompatActivity {
 
     Dialog dialog;
 
     public int numPic;
     private MediaPlayer wavPic;
-    ArrayLvl1 arrayLvl1 = new ArrayLvl1();
+    ArrayLvl2 array = new ArrayLvl2();
+    public boolean lang;
+    private long backPressedTime;
+    private Toast backToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.universallvl1);
+        setContentView(R.layout.universallvl2);
 
         final ImageView img_main = (ImageView)findViewById(R.id.img_main);
 
@@ -63,12 +68,14 @@ public class Level1_8 extends AppCompatActivity {
             }
         });
 
+        //  dialog.show();
+
         Button btn_back = (Button)findViewById(R.id.btn_back_lvl1);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1_8.this, Level1_7.class);
+                    Intent intent = new Intent(Level2_1.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -77,30 +84,75 @@ public class Level1_8 extends AppCompatActivity {
             }
         });
 
-        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
-        btn_next.setOnClickListener(new View.OnClickListener() {
+//        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
+//        btn_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    Intent intent = new Intent(Level2_1.this, Level1_2.class);
+//                    startActivity(intent);
+//                    finish();
+//                } catch (Exception ignored) {
+//
+//                }
+//            }
+//        });
+        EditText editText = (EditText)findViewById(R.id.editTextNumber);
+
+        Button answer = (Button)findViewById(R.id.answer);
+        answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1_8.this, Level1_9.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception ignored) {
-
-                }
+                    if (Integer.parseInt(editText.getText().toString()) == array.answer2[numPic]) {
+                        backToast = Toast.makeText(getBaseContext(), "Ответ верный", Toast.LENGTH_SHORT);
+                        backToast.show();
+                        Intent intent = new Intent(Level2_1.this, GameLevels.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                            backToast.cancel();
+                            return;
+                        } else {
+                            backToast = Toast.makeText(getBaseContext(), "Ответ не верный", Toast.LENGTH_SHORT);
+                            backToast.show();
+                        }
+                        backPressedTime = System.currentTimeMillis();
+                        editText.setText("0");
+                    }
+                } catch (Exception ignore) {}
             }
         });
 
-        numPic = 7;
-        img_main.setImageResource(arrayLvl1.images1[numPic]);
+        numPic = 0;
+        img_main.setImageResource(R.drawable.lvl2_1);
         img_main.setAdjustViewBounds(true);
-        textWords.setText(arrayLvl1.texts1[numPic]);
-        wavPic = MediaPlayer.create(this, arrayLvl1.raw1[numPic]);
+        textWords.setText(array.texts2[numPic]);
+        lang = true;
+        wavPic = MediaPlayer.create(this, array.raw2[numPic]);
+        soundPlayBtn(wavPic);
 
         img_main.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 soundPlayBtn(wavPic);
+            }
+        });
+
+        textWords.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    if (lang) {
+                        textWords.setText(array.texts2ru[numPic]);
+                    } else {
+                        textWords.setText(array.texts2[numPic]);
+                    }
+                    lang = !lang;
+                } catch (Exception ignored) {
+
+                }
             }
         });
 
@@ -115,7 +167,7 @@ public class Level1_8 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level1_8.this, GameLevels.class);
+            Intent intent = new Intent(Level2_1.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {

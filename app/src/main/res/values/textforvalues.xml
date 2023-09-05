@@ -14,4 +14,12 @@
     <string name="lvl1text11">Мəңгрсн\nЛук</string>
     <string name="lvl1text12">Һу\nДыня</string>
     <string name="lvl1text13">Тарвс\nАрбуз</string>
+    <string name="lvl2text0">Кермǝшин зембльд кедү улан альмн бǝǝнү?</string>
+    <string name="lvl2text0_ru">Сколько красных яблок в корзине у Кермяши?</string>
+    <string name="lvl2text1">Кермǝшин зембльд кедү ноhан альмн бǝǝнү?</string>
+    <string name="lvl2text1_ru">Сколько зеленых яблок в корзине у Кермяши?</string>
+    <string name="lvl2text2">Санҗин зембльд кедү ноhан кедмн бǝǝнү?</string>
+    <string name="lvl2text2_ru">Сколько зеленых груш в корзине у Санджи?</string>
+    <string name="lvl2text3">Санҗин зембльд кедү шар кедмн бǝǝнү?</string>
+    <string name="lvl2text3_ru">Сколько желтых груш в корзине у Санджи?</string>
 </resources>

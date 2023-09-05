@@ -21,7 +21,7 @@ public class Level1_11 extends AppCompatActivity {
 
     public int numPic;
     private MediaPlayer wavPic;
-    Array array = new Array();
+    ArrayLvl1 arrayLvl1 = new ArrayLvl1();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +92,10 @@ public class Level1_11 extends AppCompatActivity {
         });
 
         numPic = 10;
-        img_main.setImageResource(array.images1[numPic]);
+        img_main.setImageResource(arrayLvl1.images1[numPic]);
         img_main.setAdjustViewBounds(true);
-        textWords.setText(array.texts1[numPic]);
-        wavPic = MediaPlayer.create(this, array.raw1[numPic]);
+        textWords.setText(arrayLvl1.texts1[numPic]);
+        wavPic = MediaPlayer.create(this, arrayLvl1.raw1[numPic]);
 
         img_main.setOnClickListener(new View.OnClickListener() {
             @Override

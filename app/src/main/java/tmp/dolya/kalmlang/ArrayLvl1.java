@@ -1,6 +1,6 @@
 package tmp.dolya.kalmlang;
 
-public class Array {
+public class ArrayLvl1 {
     // Массив для первого уровня
     final int[] images1 = {
             R.drawable.apple,
