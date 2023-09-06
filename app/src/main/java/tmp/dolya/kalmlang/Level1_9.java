@@ -39,7 +39,7 @@ public class Level1_9 extends AppCompatActivity {
 
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.previewdialog);
+        dialog.setContentView(R.layout.previewdialoglvl1);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 

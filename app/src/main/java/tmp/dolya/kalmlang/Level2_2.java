@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level2_1 extends AppCompatActivity {
+public class Level2_2 extends AppCompatActivity {
 
     Dialog dialog;
 
@@ -95,7 +95,7 @@ public class Level2_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2_1.this, GameLevels.class);
+                    Intent intent = new Intent(Level2_2.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -104,19 +104,19 @@ public class Level2_1 extends AppCompatActivity {
             }
         });
 
-        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
-        btn_next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(Level2_1.this, Level2_2.class);
-                    startActivity(intent);
-                    finish();
-                } catch (Exception ignored) {
-
-                }
-            }
-        });
+//        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
+//        btn_next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    Intent intent = new Intent(Level2_1.this, Level1_2.class);
+//                    startActivity(intent);
+//                    finish();
+//                } catch (Exception ignored) {
+//
+//                }
+//            }
+//        });
 
         Button answer = (Button)findViewById(R.id.answer);
         answer.setOnClickListener(new View.OnClickListener() {
@@ -126,7 +126,7 @@ public class Level2_1 extends AppCompatActivity {
                     if (Integer.parseInt(textSeekBar.getText().toString()) == array.answer2[numPic]) {
                         backToast = Toast.makeText(getBaseContext(), "Ответ верный", Toast.LENGTH_SHORT);
                         backToast.show();
-                        Intent intent = new Intent(Level2_1.this, GameLevels.class);
+                        Intent intent = new Intent(Level2_2.this, GameLevels.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -145,7 +145,7 @@ public class Level2_1 extends AppCompatActivity {
             }
         });
 
-        numPic = 0;
+        numPic = 1;
         img_main.setImageResource(R.drawable.lvl2_1);
         img_main.setAdjustViewBounds(true);
         textWords.setText(array.texts2[numPic]);
@@ -187,7 +187,7 @@ public class Level2_1 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level2_1.this, GameLevels.class);
+            Intent intent = new Intent(Level2_2.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {

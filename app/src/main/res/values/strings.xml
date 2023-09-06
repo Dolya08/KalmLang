@@ -11,6 +11,8 @@
     <string name="test_q">Очень большой текст с вопросом.</string>
     <string name="word1">Альмн\nЯблоко</string>
     <string name="btn_go">Ответить</string>
+    <string name="lvl2_1">Вопросы по картинке</string>
+    <string name="lvl2_2">Перетаскивание</string>
     <string name="num1">1</string>
     <string name="num2">2</string>
     <string name="num3">3</string>

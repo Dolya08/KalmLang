@@ -124,17 +124,20 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <EditText
-                    android:id="@+id/editTextNumber"
+                <TextView
+                    android:id="@+id/textSeekBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:inputType="number"
-                    android:maxEms="10"
-                    android:minEms="1"
-                    android:text="@string/num1"
-                    android:textSize="12sp"
-                    android:autofillHints="1" />
+                    android:textSize="18sp" />
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:progress="1"
+                    android:max="10"/>
 
                 <Button
                     android:id="@+id/answer"
