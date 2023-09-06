@@ -18,22 +18,22 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:id="@+id/btncloselevels1"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:background="@drawable/button_stroke_black95_press_white"
-            android:gravity="center"
-            android:text="@string/x"
-            android:textColor="@color/black95"
-            android:textStyle="bold" />
-
         <LinearLayout
             android:id="@+id/container1levels1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/btncloselevels1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="end"
+                android:background="@drawable/button_stroke_black95_press_white"
+                android:gravity="center"
+                android:text="@string/x"
+                android:textColor="@color/black95"
+                android:textStyle="bold" />
 
             <ScrollView
                 android:layout_width="match_parent"

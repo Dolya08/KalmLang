@@ -90,7 +90,7 @@ public class Level2_1 extends AppCompatActivity {
 
         //  dialog.show();
 
-        Button btn_back = (Button)findViewById(R.id.btn_back_lvl1);
+        Button btn_back = (Button)findViewById(R.id.btn_back_lvl);
         btn_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,7 +104,7 @@ public class Level2_1 extends AppCompatActivity {
             }
         });
 
-        Button btn_next = (Button)findViewById(R.id.btn_next_lvl1);
+        Button btn_next = (Button)findViewById(R.id.btn_next_lvl);
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,7 +126,7 @@ public class Level2_1 extends AppCompatActivity {
                     if (Integer.parseInt(textSeekBar.getText().toString()) == array.answer2[numPic]) {
                         backToast = Toast.makeText(getBaseContext(), "Ответ верный", Toast.LENGTH_SHORT);
                         backToast.show();
-                        Intent intent = new Intent(Level2_1.this, GameLevels.class);
+                        Intent intent = new Intent(Level2_1.this, Level2_2.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -138,8 +138,6 @@ public class Level2_1 extends AppCompatActivity {
                             backToast.show();
                         }
                         backPressedTime = System.currentTimeMillis();
-                        textSeekBar.setText("0");
-                        seekBar.setProgress(0);
                     }
                 } catch (Exception ignore) {}
             }

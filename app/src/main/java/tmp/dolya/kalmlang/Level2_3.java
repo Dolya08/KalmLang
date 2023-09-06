@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level2_2 extends AppCompatActivity {
+public class Level2_3 extends AppCompatActivity {
 
     Dialog dialog;
 
@@ -95,7 +95,7 @@ public class Level2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2_2.this, Level2_1.class);
+                    Intent intent = new Intent(Level2_3.this, Level2_2.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -109,7 +109,7 @@ public class Level2_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2_2.this, Level2_3.class);
+                    Intent intent = new Intent(Level2_3.this, Level2_4.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -126,7 +126,7 @@ public class Level2_2 extends AppCompatActivity {
                     if (Integer.parseInt(textSeekBar.getText().toString()) == array.answer2[numPic]) {
                         backToast = Toast.makeText(getBaseContext(), "Ответ верный", Toast.LENGTH_SHORT);
                         backToast.show();
-                        Intent intent = new Intent(Level2_2.this, Level2_3.class);
+                        Intent intent = new Intent(Level2_3.this, Level2_4.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -145,7 +145,7 @@ public class Level2_2 extends AppCompatActivity {
             }
         });
 
-        numPic = 1;
+        numPic = 2;
         img_main.setImageResource(R.drawable.lvl2_1);
         img_main.setAdjustViewBounds(true);
         textWords.setText(array.texts2[numPic]);
@@ -187,7 +187,7 @@ public class Level2_2 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level2_2.this, GameLevels.class);
+            Intent intent = new Intent(Level2_3.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameLevels extends AppCompatActivity {
-    Dialog dialog1;
+    Dialog dialog1, dialog2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,12 @@ public class GameLevels extends AppCompatActivity {
         dialog1.setContentView(R.layout.levels1);
         dialog1.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog1.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
+
+        dialog2 = new Dialog(this);
+        dialog2.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog2.setContentView(R.layout.levels2);
+        dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog2.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
         TextView btnClose = (TextView) dialog1.findViewById(R.id.btncloselevels1);
         btnClose.setOnClickListener(new View.OnClickListener() {
@@ -55,9 +61,7 @@ public class GameLevels extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(GameLevels.this, Level2_1.class);
-                    startActivity(intent);
-                    finish();
+                    dialog2.show();
                 } catch (Exception ignored) {
 
                 }
@@ -78,6 +82,7 @@ public class GameLevels extends AppCompatActivity {
             }
         });
 
+        // level 1
         TextView lvl1_1 = (TextView) dialog1.findViewById(R.id.textView1);
         lvl1_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -285,6 +290,20 @@ public class GameLevels extends AppCompatActivity {
                 }catch (Exception ignored){
 
                 }
+            }
+        });
+
+        // level 2
+        TextView lvl2_1 = (TextView) dialog2.findViewById(R.id.textView1);
+        lvl2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog2.dismiss();
+                    Intent intent = new Intent(GameLevels.this, Level2_1.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignore) {  }
             }
         });
 
