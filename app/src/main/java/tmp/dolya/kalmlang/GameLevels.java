@@ -306,6 +306,18 @@ public class GameLevels extends AppCompatActivity {
                 } catch (Exception ignore) {  }
             }
         });
+        TextView lvl2_2 = (TextView) dialog2.findViewById(R.id.textView2);
+        lvl2_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog2.dismiss();
+                    Intent intent = new Intent(GameLevels.this, Level2_2_1.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignore) {  }
+            }
+        });
 
     }
     //  Системная кнопка назад

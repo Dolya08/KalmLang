@@ -4,6 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="black95">#95000000</color>
     <color name="black60">#60000000</color>
+    <color name="green60">#6000FF00</color>
+    <color name="red60">#60FF0000</color>
     <color name="blue">#48d1ff </color>
     <color name="blackboard">#365722</color>
 </resources>
