@@ -13,6 +13,8 @@
     <string name="btn_go">Ответить</string>
     <string name="lvl2_1">Вопросы по картинке</string>
     <string name="lvl2_2">Перетаскивание</string>
+    <string name="lvl3_1">Определить по вкусу</string>
+    <string name="lvl3_2">Посчитать</string>
     <string name="num1">1</string>
     <string name="num2">2</string>
     <string name="num3">3</string>
@@ -29,6 +31,7 @@
     <string name="num14">14</string>
     <string name="production">Произношение</string>
     <string name="property">Ответьте на вопросы:</string>
+    <string name="testy">Определить по вкусу:</string>
     <string name="x">X</string>
     <string name="q">?</string>
 </resources>

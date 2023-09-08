@@ -8,33 +8,37 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.DragEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level2_2_1 extends AppCompatActivity {
+public class Level3_1_1 extends AppCompatActivity {
     int numPic;
     ImageView imgMain;
-    LinearLayout obj1, obj2;
-    ArrayLvl2_1 arrayLvl2_1 = new ArrayLvl2_1();
+    LinearLayout obj1, obj2, obj3;
+    ArrayLvl3 arrayLvl3 = new ArrayLvl3();
     @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.universallvl2_1);
+        setContentView(R.layout.universallvl3_1);
 
         imgMain = (ImageView)findViewById(R.id.img_main2);
         numPic = 0;
-        imgMain.setImageResource(arrayLvl2_1.images2[numPic]);
+        imgMain.setImageResource(arrayLvl3.images3_1[numPic]);
         imgMain.setAdjustViewBounds(true);
 
         obj1 = (LinearLayout)findViewById(R.id.objective1);
         obj2 = (LinearLayout)findViewById(R.id.objective2);
+        obj3 = (LinearLayout)findViewById(R.id.objective3);
+
+        TextView textView = (TextView)findViewById(R.id.textView);
+        textView.setText(arrayLvl3.texts3_1[numPic]);
 
         imgMain = (ImageView)findViewById(R.id.img_main2);
         imgMain.setTag("The Android Logo");
@@ -42,6 +46,7 @@ public class Level2_2_1 extends AppCompatActivity {
 
         obj1.setOnDragListener(new MyDragListener());
         obj2.setOnDragListener(new MyDragListener());
+        obj3.setOnDragListener(new MyDragListener());
 
         Button btn_back = (Button)findViewById(R.id.btn_back_lvl);
         btn_back.setText("Меню");
@@ -49,7 +54,7 @@ public class Level2_2_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2_2_1.this, GameLevels.class);
+                    Intent intent = new Intent(Level3_1_1.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -81,7 +86,7 @@ public class Level2_2_1 extends AppCompatActivity {
 
             String [] mimeTypes = { ClipDescription.MIMETYPE_TEXT_PLAIN };
             ClipData data = new ClipData(v.getTag().toString(), mimeTypes, item);
-            DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+            DragShadowBuilder shadowBuilder = new DragShadowBuilder(v);
 
             v.startDrag(data, shadowBuilder, v, 0);
             v.setVisibility(View.VISIBLE);
@@ -100,58 +105,36 @@ public class Level2_2_1 extends AppCompatActivity {
         @Override
         public boolean onDrag(View v, DragEvent event) {
             View startPos = (View) event.getLocalState();
-            switch (event.getAction()) {
-                case DragEvent.ACTION_DRAG_STARTED:
-                    startPos = (View) event.getLocalState();
-                    break;
-                case DragEvent.ACTION_DRAG_ENTERED:
-                    if (v.getId() == obj1.getId()) {
-                        if (arrayLvl2_1.answer2[numPic] == 1) {
-                            v.setBackground(check_circle);
-                        } else {
-                            v.setBackground(wrong_circle);
-                        }
-                    } else if (v.getId() == obj2.getId()) {
-                        if (arrayLvl2_1.answer2[numPic] == 2) {
-                            v.setBackground(check_oval);
-                        } else {
-                            v.setBackground(wrong_oval);
-                        }
-                    }
-                    break;
-                case DragEvent.ACTION_DRAG_EXITED:
-                case DragEvent.ACTION_DRAG_ENDED:
-                    if (v.getId() == obj1.getId()) {
-                        v.setBackground(normal_circle);
-                    } else if (v.getId() == obj2.getId()) {
-                        v.setBackground(normal_oval);
-                    }
-                    break;
-                case DragEvent.ACTION_DROP:
-                    View view = (View) event.getLocalState();
-                    ViewGroup viewGroup = (ViewGroup) view.getParent();
-                    if (v.getId() == obj1.getId() && arrayLvl2_1.answer2[numPic] == 1) {
-                        try {
-                            Intent intent = new Intent(Level2_2_1.this, Level2_2_2.class);
-                            startActivity(intent);
-                            finish();
-                        } catch (Exception ignored) {
+            if (event.getAction() == DragEvent.ACTION_DROP) {
+                View view = (View) event.getLocalState();
+                ViewGroup viewGroup = (ViewGroup) view.getParent();
+                if (v.getId() == obj1.getId() && arrayLvl3.answer3_1[numPic] == 1) {
+                    try {
+                        Intent intent = new Intent(Level3_1_1.this, Level3_1_2.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (Exception ignored) {
 
-                        }
-                    } else if (v.getId() == obj2.getId() && arrayLvl2_1.answer2[numPic] == 2) {
-                        try {
-                            Intent intent = new Intent(Level2_2_1.this, Level2_2_2.class);
-                            startActivity(intent);
-                            finish();
-                        } catch (Exception ignored) {
-
-                        }
-                    } else {
-                        startPos.setVisibility(View.VISIBLE);
                     }
-                    break;
-                default:
-                    break;
+                } else if (v.getId() == obj2.getId() && arrayLvl3.answer3_1[numPic] == 2) {
+                    try {
+                        Intent intent = new Intent(Level3_1_1.this, Level3_1_2.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (Exception ignored) {
+
+                    }
+                } else if (v.getId() == obj2.getId() && arrayLvl3.answer3_1[numPic] == 3) {
+                    try {
+                        Intent intent = new Intent(Level3_1_1.this, Level3_1_2.class);
+                        startActivity(intent);
+                        finish();
+                    } catch (Exception ignored) {
+
+                    }
+                } else {
+                    startPos.setVisibility(View.VISIBLE);
+                }
             }
             return true;
         }
@@ -165,7 +148,7 @@ public class Level2_2_1 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level2_2_1.this, GameLevels.class);
+            Intent intent = new Intent(Level3_1_1.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {

@@ -14,7 +14,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class GameLevels extends AppCompatActivity {
-    Dialog dialog1, dialog2;
+    Dialog dialog1, dialog2, dialog3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,12 @@ public class GameLevels extends AppCompatActivity {
         dialog2.setContentView(R.layout.levels2);
         dialog2.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog2.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
+
+        dialog3 = new Dialog(this);
+        dialog3.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog3.setContentView(R.layout.levels3);
+        dialog3.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog3.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
         TextView btnClose = (TextView) dialog1.findViewById(R.id.btncloselevels1);
         btnClose.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +68,18 @@ public class GameLevels extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     dialog2.show();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+
+        TextView btnlvl3 = (TextView)this.findViewById(R.id.caption3);
+        btnlvl3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog3.show();
                 } catch (Exception ignored) {
 
                 }
@@ -318,6 +336,32 @@ public class GameLevels extends AppCompatActivity {
                 } catch (Exception ignore) {  }
             }
         });
+
+        // level 3
+        TextView lvl3_1 = (TextView) dialog3.findViewById(R.id.textView1);
+        lvl3_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog3.dismiss();
+                    Intent intent = new Intent(GameLevels.this, Level3_1_1.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignore) {  }
+            }
+        });
+//        TextView lvl3_2 = (TextView) dialog3.findViewById(R.id.textView2);
+//        lvl3_2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                try {
+//                    dialog3.dismiss();
+//                    Intent intent = new Intent(GameLevels.this, Level3_2_1.class);
+//                    startActivity(intent);
+//                    finish();
+//                } catch (Exception ignore) {  }
+//            }
+//        });
 
     }
     //  Системная кнопка назад

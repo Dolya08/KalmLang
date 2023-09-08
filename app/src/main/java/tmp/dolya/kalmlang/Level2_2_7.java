@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.DragEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.ViewGroup;
@@ -18,7 +17,7 @@ import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Level2_2_1 extends AppCompatActivity {
+public class Level2_2_7 extends AppCompatActivity {
     int numPic;
     ImageView imgMain;
     LinearLayout obj1, obj2;
@@ -29,7 +28,7 @@ public class Level2_2_1 extends AppCompatActivity {
         setContentView(R.layout.universallvl2_1);
 
         imgMain = (ImageView)findViewById(R.id.img_main2);
-        numPic = 0;
+        numPic = 6;
         imgMain.setImageResource(arrayLvl2_1.images2[numPic]);
         imgMain.setAdjustViewBounds(true);
 
@@ -49,7 +48,7 @@ public class Level2_2_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2_2_1.this, GameLevels.class);
+                    Intent intent = new Intent(Level2_2_7.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {
@@ -81,7 +80,7 @@ public class Level2_2_1 extends AppCompatActivity {
 
             String [] mimeTypes = { ClipDescription.MIMETYPE_TEXT_PLAIN };
             ClipData data = new ClipData(v.getTag().toString(), mimeTypes, item);
-            DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
+            DragShadowBuilder shadowBuilder = new DragShadowBuilder(v);
 
             v.startDrag(data, shadowBuilder, v, 0);
             v.setVisibility(View.VISIBLE);
@@ -132,7 +131,7 @@ public class Level2_2_1 extends AppCompatActivity {
                     ViewGroup viewGroup = (ViewGroup) view.getParent();
                     if (v.getId() == obj1.getId() && arrayLvl2_1.answer2[numPic] == 1) {
                         try {
-                            Intent intent = new Intent(Level2_2_1.this, Level2_2_2.class);
+                            Intent intent = new Intent(Level2_2_7.this, Level2_2_8.class);
                             startActivity(intent);
                             finish();
                         } catch (Exception ignored) {
@@ -140,7 +139,7 @@ public class Level2_2_1 extends AppCompatActivity {
                         }
                     } else if (v.getId() == obj2.getId() && arrayLvl2_1.answer2[numPic] == 2) {
                         try {
-                            Intent intent = new Intent(Level2_2_1.this, Level2_2_2.class);
+                            Intent intent = new Intent(Level2_2_7.this, Level2_2_8.class);
                             startActivity(intent);
                             finish();
                         } catch (Exception ignored) {
@@ -165,7 +164,7 @@ public class Level2_2_1 extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         try {
-            Intent intent = new Intent(Level2_2_1.this, GameLevels.class);
+            Intent intent = new Intent(Level2_2_7.this, GameLevels.class);
             startActivity(intent);
             finish();
         } catch (Exception ignored) {
