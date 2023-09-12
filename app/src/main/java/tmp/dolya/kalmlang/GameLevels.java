@@ -350,18 +350,18 @@ public class GameLevels extends AppCompatActivity {
                 } catch (Exception ignore) {  }
             }
         });
-//        TextView lvl3_2 = (TextView) dialog3.findViewById(R.id.textView2);
-//        lvl3_2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                try {
-//                    dialog3.dismiss();
-//                    Intent intent = new Intent(GameLevels.this, Level3_2_1.class);
-//                    startActivity(intent);
-//                    finish();
-//                } catch (Exception ignore) {  }
-//            }
-//        });
+        TextView lvl3_2 = (TextView) dialog3.findViewById(R.id.textView2);
+        lvl3_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog3.dismiss();
+                    Intent intent = new Intent(GameLevels.this, Level3_2.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception ignore) {  }
+            }
+        });
 
     }
     //  Системная кнопка назад
@@ -371,7 +371,7 @@ public class GameLevels extends AppCompatActivity {
             Intent intent = new Intent(GameLevels.this, MainActivity.class);
             startActivity(intent);
             finish();
-        }catch (Exception ignored){
+        } catch (Exception ignored){
 
         }
     }
