@@ -3,39 +3,33 @@ package tmp.dolya.kalmlang;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.DragEvent;
-import android.view.MotionEvent;
+import android.view.Display;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Arrays;
+import java.util.Objects;
 
 public class Level3_2 extends AppCompatActivity {
-    ImageView item1, item2, item3, item4;
-    TextView numb1, numb2, numb3, numb4;
-    float startX, startY, endX, endY;
-    int width, height;
-    int[] pos = new int[2];
-    float[] x1, y1, x2, y2;
-    LinearLayout container1lvl;
+    private long backPressedTime;
+    private Toast backToast;
+    String[] numb = {"негн", "хойр", "һурвн", "дөрвн", "тавн", "зурһан", "долан", "нәәмн", "йисн", "арвн"};
     @SuppressLint("ClickableViewAccessibility")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universallvl3_2);
-        container1lvl = (LinearLayout)findViewById(R.id.container1lvl);
 
         Button btn_back = (Button)findViewById(R.id.btn_back_lvl);
         btn_back.setText("Меню");
@@ -54,71 +48,59 @@ public class Level3_2 extends AppCompatActivity {
 
         Button btn_next = (Button)findViewById(R.id.btn_next_lvl);
         btn_next.setVisibility(View.INVISIBLE);
-    }
-    @Override
-    public void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        item1 = (ImageView)findViewById(R.id.imgItem1);
-        item2 = (ImageView)findViewById(R.id.imgItem2);
-        item3 = (ImageView)findViewById(R.id.imgItem3);
-        item4 = (ImageView)findViewById(R.id.imgItem4);
-        numb1 = (TextView)findViewById(R.id.numbItem1);
-        numb2 = (TextView)findViewById(R.id.numbItem2);
-        numb3 = (TextView)findViewById(R.id.numbItem3);
-        numb4 = (TextView)findViewById(R.id.numbItem4);
 
-        item1.getLocationOnScreen(pos);
-        Log.d("pos_x", String.valueOf(item1.getX()));
-        Log.d("pos_y", String.valueOf(item1.getY()));
-        x1[0] = (float)pos[0];
-        y1[0] = (float)pos[1];
-        x2[0] = x1[0] + (float)item1.getWidth();
-        y2[0] = y1[0] + (float)item1.getHeight();
+        NumberPicker numb1 = (NumberPicker)findViewById(R.id.numb1);
+        numb1.setMinValue(1);
+        numb1.setMaxValue(10);
+        numb1.setDisplayedValues(numb);
 
-        item2.getLocationOnScreen(pos);
-        x1[1] = (float)pos[0];
-        y1[1] = (float)pos[1];
-        x2[1] = x1[1] + (float)item2.getWidth();
-        y2[1] = y1[1] + (float)item2.getHeight();
+        NumberPicker numb2 = (NumberPicker)findViewById(R.id.numb2);
+        numb2.setMinValue(1);
+        numb2.setMaxValue(10);
+        numb2.setDisplayedValues(numb);
 
-        item3.getLocationOnScreen(pos);
-        x1[2] = (float)pos[0];
-        y1[2] = (float)pos[1];
-        x2[2] = x1[2] + (float)item3.getWidth();
-        y2[2] = y1[2] + (float)item3.getHeight();
+        NumberPicker numb3 = (NumberPicker)findViewById(R.id.numb3);
+        numb3.setMinValue(1);
+        numb3.setMaxValue(10);
+        numb3.setDisplayedValues(numb);
 
-        item4.getLocationOnScreen(pos);
-        x1[3] = (float)pos[0];
-        y1[3] = (float)pos[1];
-        x2[3] = x1[3] + (float)item4.getWidth();
-        y2[3] = y1[3] + (float)item4.getHeight();
+        NumberPicker numb4 = (NumberPicker)findViewById(R.id.numb4);
+        numb4.setMinValue(1);
+        numb4.setMaxValue(10);
+        numb4.setDisplayedValues(numb);
 
-        numb1.getLocationOnScreen(pos);
-        x1[0] = (float)pos[0];
-        y1[0] = (float)pos[1];
-        x2[0] = x1[0] + (float)numb1.getWidth();
-        y2[0] = y1[0] + (float)numb1.getHeight();
-
-        numb2.getLocationOnScreen(pos);
-        x1[1] = (float)pos[0];
-        y1[1] = (float)pos[1];
-        x2[1] = x1[1] + (float)numb2.getWidth();
-        y2[1] = y1[1] + (float)numb2.getHeight();
-
-        numb3.getLocationOnScreen(pos);
-        x1[2] = (float)pos[0];
-        y1[2] = (float)pos[1];
-        x2[2] = x1[2] + (float)numb3.getWidth();
-        y2[2] = y1[2] + (float)numb3.getHeight();
-
-        numb4.getLocationOnScreen(pos);
-        x1[3] = (float)pos[0];
-        y1[3] = (float)pos[1];
-        x2[3] = x1[3] + (float)numb4.getWidth();
-        y2[3] = y1[3] + (float)numb4.getHeight();
-
-        width = getWindowManager().getDefaultDisplay().getWidth();
-        height = getWindowManager().getDefaultDisplay().getHeight();
+        Button check = (Button)findViewById(R.id.check);
+        check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Log.d("deb_tmp", numb[numb1.getValue()]);
+                    Log.d("deb_tmp", String.valueOf(numb1.getValue()));
+                    Log.d("deb_tmp", numb[numb2.getValue()]);
+                    Log.d("deb_tmp", String.valueOf(numb2.getValue()));
+                    Log.d("deb_tmp", numb[numb3.getValue()]);
+                    Log.d("deb_tmp", String.valueOf(numb3.getValue()));
+                    Log.d("deb_tmp", numb[numb4.getValue()]);
+                    Log.d("deb_tmp", String.valueOf(numb4.getValue()));
+                    if (Objects.equals(numb[numb1.getValue() - 1], "тавн") && Objects.equals(numb[numb2.getValue() - 1], "һурвн") && Objects.equals(numb[numb3.getValue() - 1], "негн") && Objects.equals(numb[numb4.getValue() - 1], "хойр")) {
+                        backToast = Toast.makeText(getBaseContext(), "Ответ верный", Toast.LENGTH_SHORT);
+                        backToast.show();
+                        Intent intent = new Intent(Level3_2.this, GameLevels.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+                            backToast.cancel();
+                            return;
+                        } else {
+                            backToast = Toast.makeText(getBaseContext(), "Ответ не верный", Toast.LENGTH_SHORT);
+                            backToast.show();
+                        }
+                        backPressedTime = System.currentTimeMillis();
+                    }
+                } catch (Exception ignore) {}
+            }
+        });
     }
     private void soundPlayBtn(MediaPlayer sound) {
         if (sound.isPlaying()) {

@@ -102,23 +102,23 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_img_universal"
                     android:padding="5dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="15dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/img_1"
-                        android:layout_width="113dp"
-                        android:layout_height="113dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="start|center"
                         android:layout_margin="5dp"
                         android:importantForAccessibility="no"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/onion_5_113" />
+                        android:src="@drawable/onion_5" />
 
                     <NumberPicker
                         android:id="@+id/numb1"
                         android:layout_width="50dp"
-                        android:layout_height="113dp"
+                        android:layout_height="150dp"
                         android:layout_margin="5dp" />
                 </LinearLayout>
 
@@ -128,23 +128,23 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_img_universal"
                     android:padding="5dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="15dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/img_2"
-                        android:layout_width="113dp"
-                        android:layout_height="113dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="start|center"
                         android:layout_margin="5dp"
                         android:importantForAccessibility="no"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/carrot_3_113" />
+                        android:src="@drawable/carrot_3" />
 
                     <NumberPicker
                         android:id="@+id/numb2"
                         android:layout_width="50dp"
-                        android:layout_height="113dp"
+                        android:layout_height="150dp"
                         android:layout_margin="5dp" />
                 </LinearLayout>
 
@@ -164,23 +164,23 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_img_universal"
                     android:padding="5dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="15dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/img_3"
-                        android:layout_width="113dp"
-                        android:layout_height="113dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="start|center"
                         android:layout_margin="5dp"
                         android:importantForAccessibility="no"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/melom_1_113" />
+                        android:src="@drawable/melom_1" />
 
                     <NumberPicker
                         android:id="@+id/numb3"
                         android:layout_width="50dp"
-                        android:layout_height="113dp"
+                        android:layout_height="150dp"
                         android:layout_margin="5dp" />
                 </LinearLayout>
 
@@ -190,23 +190,23 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/style_img_universal"
                     android:padding="5dp"
-                    android:layout_marginEnd="3dp"
+                    android:layout_marginEnd="15dp"
                     android:orientation="horizontal">
 
                     <ImageView
                         android:id="@+id/img_4"
-                        android:layout_width="113dp"
-                        android:layout_height="113dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="start|center"
                         android:layout_margin="5dp"
                         android:importantForAccessibility="no"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/potato_2_113" />
+                        android:src="@drawable/potato_2" />
 
                     <NumberPicker
                         android:id="@+id/numb4"
                         android:layout_width="50dp"
-                        android:layout_height="113dp"
+                        android:layout_height="150dp"
                         android:layout_margin="5dp" />
                 </LinearLayout>
 

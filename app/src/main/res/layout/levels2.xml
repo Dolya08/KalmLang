@@ -21,7 +21,7 @@
         <LinearLayout
             android:id="@+id/container1levels1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -37,7 +37,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
 
                 <LinearLayout

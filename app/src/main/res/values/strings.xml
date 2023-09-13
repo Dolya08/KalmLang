@@ -11,6 +11,7 @@
     <string name="test_q">Очень большой текст с вопросом.</string>
     <string name="word1">Альмн\nЯблоко</string>
     <string name="btn_go">Ответить</string>
+    <string name="btn_check">Проверить</string>
     <string name="lvl2_1">Вопросы по картинке</string>
     <string name="lvl2_2">Перетаскивание</string>
     <string name="lvl3_1">Определить по вкусу</string>
@@ -32,6 +33,7 @@
     <string name="production">Произношение</string>
     <string name="property">Ответьте на вопросы:</string>
     <string name="testy">Определить по вкусу:</string>
+    <string name="check">Определить количество:</string>
     <string name="x">X</string>
     <string name="q">?</string>
 </resources>
