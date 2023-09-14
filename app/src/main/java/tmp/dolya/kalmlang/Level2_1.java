@@ -105,6 +105,7 @@ public class Level2_1 extends AppCompatActivity {
         });
 
         Button btn_next = (Button)findViewById(R.id.btn_next_lvl);
+        btn_next.setVisibility(View.INVISIBLE);
         btn_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

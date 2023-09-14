@@ -68,7 +68,7 @@ public class Level1_2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1_2.this, Level1_1.class);
+                    Intent intent = new Intent(Level1_2.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception ignored) {

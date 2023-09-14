@@ -42,11 +42,27 @@ public class GameLevels extends AppCompatActivity {
         dialog3.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog3.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
-        TextView btnClose = (TextView) dialog1.findViewById(R.id.btncloselevels1);
-        btnClose.setOnClickListener(new View.OnClickListener() {
+        TextView btnClose1 = (TextView) dialog1.findViewById(R.id.btncloselevels1);
+        btnClose1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog1.dismiss();
+            }
+        });
+
+        TextView btnClose2 = (TextView) dialog2.findViewById(R.id.btncloselevels2);
+        btnClose2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog2.dismiss();
+            }
+        });
+
+        TextView btnClose3 = (TextView) dialog3.findViewById(R.id.btncloselevels3);
+        btnClose3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog3.dismiss();
             }
         });
 
