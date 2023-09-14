@@ -1,15 +1,19 @@
 package tmp.dolya.kalmlang;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,6 +27,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.Objects;
 
 public class Level3_2 extends AppCompatActivity {
+    Dialog dialog;
     private long backPressedTime;
     private Toast backToast;
     String[] numb = {"негн", "хойр", "һурвн", "дөрвн", "тавн", "зурһан", "долан", "нәәмн", "йисн", "арвн"};
@@ -30,6 +35,12 @@ public class Level3_2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universallvl3_2);
+
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialoglvl3_2);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
         Button btn_back = (Button)findViewById(R.id.btn_back_lvl);
         btn_back.setText("Меню");
@@ -68,6 +79,18 @@ public class Level3_2 extends AppCompatActivity {
         numb4.setMinValue(1);
         numb4.setMaxValue(10);
         numb4.setDisplayedValues(numb);
+
+        TextView btnQuest = (TextView)this.findViewById(R.id.btnquest);
+        btnQuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog.show();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
 
         Button check = (Button)findViewById(R.id.check);
         check.setOnClickListener(new View.OnClickListener() {

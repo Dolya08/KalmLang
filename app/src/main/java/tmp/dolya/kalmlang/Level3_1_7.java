@@ -1,9 +1,12 @@
 package tmp.dolya.kalmlang;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipDescription;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -11,6 +14,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,6 +23,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Level3_1_7 extends AppCompatActivity {
+    Dialog dialog;
     int numPic;
     ImageView imgMain;
     LinearLayout obj1, obj2, obj3;
@@ -27,6 +32,12 @@ public class Level3_1_7 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.universallvl3_1);
+
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.previewdialoglvl3_1);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(true); //можно ли закрыть диалоговое окно кнопкой назад
 
         imgMain = (ImageView)findViewById(R.id.img_main2);
         numPic = 6;
@@ -65,18 +76,18 @@ public class Level3_1_7 extends AppCompatActivity {
 
         Button btn_next = (Button)findViewById(R.id.btn_next_lvl);
         btn_next.setVisibility(View.INVISIBLE);
-//        btn_next.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                try {
-//                    Intent intent = new Intent(Level2_2_1.this, Level1_2.class);
-//                    startActivity(intent);
-//                    finish();
-//                } catch (Exception ignored) {
-//
-//                }
-//            }
-//        });
+
+        TextView btnQuest = (TextView)this.findViewById(R.id.btnquest);
+        btnQuest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    dialog.show();
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
     }
 
     private static final class MyClickListener implements View.OnLongClickListener {

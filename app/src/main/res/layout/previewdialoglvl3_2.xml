@@ -42,7 +42,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="60"
-                    android:src="@drawable/previewimg1" />
+                    android:src="@drawable/previewimg3_2" />
 
                 <TextView
                     android:id="@+id/textdescriprion"
@@ -50,7 +50,7 @@
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
                     android:layout_weight="30"
-                    android:text="@string/level1"
+                    android:text="@string/level3_2"
                     android:textAlignment="center"
                     android:textColor="@color/black95"
                     android:textSize="18sp" />
